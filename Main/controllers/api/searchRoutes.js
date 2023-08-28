@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Search } = require('../../models');
+const { Event } = require('../../models');
 
 // Define a route to search the database
 router.get('/api/search', async (req, res) => {
