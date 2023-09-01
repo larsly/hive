@@ -1,14 +1,14 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
+//create new profile - still need to associate profile with user id
+  const buzzName = document.querySelector('#hive-name').value.trim();
+  const profileDescription = document.querySelector('#profile-description').value.trim();
+  const socialMedia = document.querySelector('#profile-social').value;
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
-
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (buzzName && profileDescription && socialMedia) {
+    const response = await fetch(`/api/userRouts`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ buzzName, profileDescription, socialMedia }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -16,32 +16,33 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
+    
     } else {
-      alert('Failed to create project');
+      alert('Failed to create profile');
     }
   }
 };
+//delete profile
+// const delButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+//     const response = await fetch(`/api/projects/${id}`, {
+//       method: 'DELETE',
+//     });
 
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/profile');
+//     } else {
+//       alert('Failed to delete profile');
+//     }
+//   }
+// };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.profile-submit')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.profile-list')
+//   .addEventListener('click', delButtonHandler);

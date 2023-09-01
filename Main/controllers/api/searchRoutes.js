@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Event } = require('../../models');
 
 // Define a route to search the database
-router.get('/api/search', async (req, res) => {
+router.post('/search', async (req, res) => {
+
     try {
         // Find the logged in user based on the session ID
         const searchEvent = await Event.findByPk(req.session.user_id, {
@@ -12,8 +13,10 @@ router.get('/api/search', async (req, res) => {
     
         const user = searchEvent.get({ plain: true });
     
-        res.render('profile', {
-          ...user,
+
+        res.render('searchevent', {
+
+         ...user,
           logged_in: true
         });
       } catch (err) {
