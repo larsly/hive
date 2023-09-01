@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>Hive</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -19,9 +19,8 @@
 
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">My Hive</a>
-        <a href="/event">Where's the Buzz?</a>
-        <a href="/users">Find Friends!</a>
+        <a href="/search">Find Events</a>
+        <a href="/event">Add Event</a>       
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
