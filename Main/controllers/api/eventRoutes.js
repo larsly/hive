@@ -40,29 +40,29 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // subscribe to event 
-router.post('/:id', withAuth, async (req, res) => {
-  try {
-    const eventData = await Event.findAll({
-      where: {id: req.params.id}
-    });
-    if (!eventData) {
-      res.status(404).json({ message: 'No event found with this id!' });
-      return;
-    }
-    const userData = await User.findAll({
-      where: {id: req.session.user_id}
-    });
-    if (!userData) {
-      res.status(404).json({ message: 'No user found!' });
-      return;
-    }
-    await User.addEvent(eventData);
-    await Event.addUser(userData);
-    res.status(200).json({ message: 'ok' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
+// router.post('/:id', withAuth, async (req, res) => {
+//   try {
+//     const eventData = await Event.findAll({
+//       where: {id: req.params.id}
+//     });
+//     if (!eventData) {
+//       res.status(404).json({ message: 'No event found with this id!' });
+//       return;
+//     }
+//     const userData = await User.findAll({
+//       where: {id: req.session.user_id}
+//     });
+//     if (!userData) {
+//       res.status(404).json({ message: 'No user found!' });
+//       return;
+//     }
+//     await User.addEvent(eventData);
+//     await Event.addUser(userData);
+//     res.status(200).json({ message: 'ok' });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

@@ -2,8 +2,9 @@ const router = require('express').Router();
 const EventModel = require('../models/Event');
 const UserModel = require('../models/User');
 const CommentModel = require('../models/Comment');
+const withAuth = require('../utils/auth');
 
-router.get('/', async function (req, res) {
+router.get('/', withAuth, async function (req, res) {
     try { 
         const eventsData = await EventModel.findAll({
             attributes: [
@@ -85,6 +86,18 @@ router.get('/event/:id', async function (req, res) {
 
 router.get('/signup', function(req, res) {
     res.render('signup')
+});
+
+router.get('/login', function(req, res) {
+    res.render('login')
+});
+
+router.get('/logout', function(req, res) {
+    res.render('login')
+});
+
+router.get('/homepage', function(req, res,) {
+    res.render('homepage')
 });
 
 module.exports = router 
