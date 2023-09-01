@@ -12,7 +12,7 @@ router.post('/search', async (req, res) => {
     
         const user = searchEvent.get({ plain: true });
     
-        res.render('profile', {
+        res.render('searchevent', {
           ...user,
           logged_in: true
         });
