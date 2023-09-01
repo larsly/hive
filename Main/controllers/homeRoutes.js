@@ -100,4 +100,8 @@ router.get('/homepage', function(req, res,) {
     res.render('homepage')
 });
 
+router.get('/event', function(req, res) {
+    res.render('event')
+});
+
 module.exports = router 
