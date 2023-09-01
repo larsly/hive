@@ -1,4 +1,4 @@
-<div class="text-center">
+{{!-- <div class="text-center">
   <h2>{{name}}</h2>
   <p>{{{get_emoji}}}</p>
   <p>{{description}}</p>
@@ -11,4 +11,28 @@
   <p>
     <button class="btn btn-primary">Fund this Project!</button>
   </p>
-</div>
+</div> --}}
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Create Event</h2>
+
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="name">Name of event:</label>
+        <input class="form-input" type="text" id="name" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description and location:</label>
+        <input class="form-input" type="password" id="description" />
+      </div>
+      <div class="form-group">
+        <label for="date_scheduled">Description with time and place:</label>
+        <input class="form-input" type="password" id="date_scheduled" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create!</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
