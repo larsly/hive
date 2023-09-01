@@ -3,6 +3,7 @@ const { Event } = require('../../models');
 
 // Define a route to search the database
 router.post('/search', async (req, res) => {
+
     try {
         // Find the logged in user based on the session ID
         const searchEvent = await Event.findByPk(req.session.user_id, {
@@ -12,8 +13,10 @@ router.post('/search', async (req, res) => {
     
         const user = searchEvent.get({ plain: true });
     
+
         res.render('searchevent', {
-          ...user,
+
+         ...user,
           logged_in: true
         });
       } catch (err) {
