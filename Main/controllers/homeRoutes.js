@@ -28,12 +28,12 @@ router.get('/', async function (req, res) {
             
         });
         const events = eventsData.map((post) => post.get({ plain: true }));
-            res.render('home',{
+            res.render('homepage',{
             loggedIn: req.session.logged_in, posts
     
         })
     } catch (error) {
-            res.render('home',{
+            res.render('homepage',{
             loggedIn: req.session.logged_in, 
             error:'Failed to load events in homeRoutes'
 
