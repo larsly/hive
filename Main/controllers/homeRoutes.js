@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const EventModel = require('../models/Event');
 const UserModel = require('../models/User');
-const CommentModel = require('../models/Comment');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async function (req, res) {
