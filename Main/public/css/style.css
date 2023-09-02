@@ -2,18 +2,19 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+
 .no-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #727b7f;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #a09b57;
   text-decoration: underline;
 }
 
@@ -82,7 +83,7 @@ header, .project:not(:last-child) {
   left: -1%;  /* prevent line on the right where background doesn't cover image */
   padding: 5%;
   box-sizing: border-box;
-  background-color: rgba(0, 128, 128, 0.8);
+  background-color: rgba(200, 222, 72, 0.8);
   font-weight: 300;
   transition: transform .2s ease-out, opacity .3s ease-out;
 }
@@ -182,4 +183,24 @@ header, .project:not(:last-child) {
 }
 
 /* End Hexagons */
+/* Body */
+body {
+  background: linear-gradient(to bottom, #201504, #876e0b, #d8c30d);
+}
 
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+}
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}

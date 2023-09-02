@@ -18,6 +18,28 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// update an event
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const updatedEvent = await Event.update(req.body, {
+      where: {
+      id: req.params.id,
+      user_id: req.session.user.id, //make sure event belongs to user - maybe not necessary?
+    },
+  });
+
+  if (!updatedEvent[0]) {
+    res.status(404).json({ message: 'No event found with this id' });
+    return;
+  }
+
+  res.status(200).json(updatedEvent);
+} catch (err) {
+  res.status(400).json(err);
+}
+});
+
+
 // delete an event
 router.delete('/:id', withAuth, async (req, res) => {
   try {
