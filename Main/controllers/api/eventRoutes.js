@@ -39,7 +39,6 @@ router.put('/:id', withAuth, async (req, res) => {
 }
 });
 
-
 // delete an event
 router.delete('/:id', withAuth, async (req, res) => {
   try {
