@@ -1,15 +1,26 @@
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 <ul id="hexGrid">
   {{#each events as |event| }}
     <li class="hex">
       <a class="hexIn" href="#">
-        <img src="{{event.event_image}}" alt="">
-        <h1>{{event.event_name}}</h1>
-        <p>{{event.event_venue}}</p>
+        <img src="{{event.image}}" alt="">
+        <h1>{{event.name}}</h1>
+        <p>{{event.description}}</p>
       </a>
     </li>
   {{/each}}
 </ul>
+
+{{!-- <ul id="hexGrid">
+  <li class="hex">
+    <a class="hexIn" href="#">
+      <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
+      <h1>This is a title</h1>
+      <p>Some sample text about the article this hexagon leads to</p>
+    </a>
+  </li>
+
+</ul> --}}
 
 
