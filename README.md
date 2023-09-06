@@ -19,9 +19,9 @@ Application can be used online with user interface.  To make it your own, clone 
  Watching class videos class and reviewing the code from the activity files was the best resource to complete the project.  Additionally, the sequelize.org website was very helpful especially the documentation on operators:  https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
  Custom CSS For Honeycomb Layout: https://www.bypeople.com/pure-css-responsive-honeycomb-grid/
  ## Links and Visuals
- This application is deployed on Heroku: https://desolate-ridge-15241-527f28c2b28b.herokuapp.com/
- Github Repository: https://github.com/aliehs111/hive_new
- ![Alt text](/assets/Screenshot%202023-09-04%20at%203.36.05%20PM.png)
+ This application is deployed on Heroku: https://project-2-hive-2961a366f45c.herokuapp.com/login
+ Github Repository: https://github.com/larsly/hive and https://github.com/aliehs111/hive_new
+ ![Alt text](/assets/Screenshot%202023-09-05%20210919.png)
 
 
 
